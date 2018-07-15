@@ -5,179 +5,26 @@
             Welcome to Sydney trains web app
         </title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <style>
-            a[data-toggle="collapse"] {
-				text-decoration:none;
-            }
-            .form-group {
-				padding:10px;
-            }
-			.table-primary {
-				background: #bee5eb;
-			}
-			
-			.panel-default>.panel-heading {
-				background: white;
-			}
-        </style>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">  
     </head>
     <body>
-        <!-- <!------ Include the above in your HEAD tag ---------->
-        <!-- <div class="container"> -->
-        <!-- <h1> Bus reports </h1> -->
-        <!-- <div class="panel-group" id="accordion"> -->
-        <!-- <div class="panel panel-default"> -->
-        <!-- <div class="panel-heading"> -->
-        <!-- <h4 class="panel-title"> -->
-        <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> -->
-        <!-- <h4>Sydney Buses - 25/09/2015 </h4> -->
-        <!-- </a> -->
-        <!-- <i  class="indicator glyphicon glyphicon-collapse-up  pull-right"></i> -->
-        <!-- </h4> -->
-        <!-- </div> -->
-        <!-- <div id="collapseOne" class="panel-collapse collapse"> -->
-        <!-- <div class="panel-body"> -->
-        <!-- <table class="table table-hover"> -->
-        <!-- <thead> -->
-        <!-- <tr class="table-primary"> -->
-        <!-- <th scope="col">Bus ID</th> -->
-        <!-- <th scope="col">Route Variant</th> -->
-        <!-- <th scope="col">Status</th> -->
-        <!-- </tr> -->
-        <!-- </thead> -->
-        <!-- <tbody> -->
-        <!-- <tr> -->
-        <!-- <td>426212</td> -->
-        <!-- <td><b>892</b> 1 13</td> -->
-        <!-- <td>On Time</td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-        <!-- <td>426234</td> -->
-        <!-- <td><b>345</b> 6 7</td> -->
-        <!-- <td>Late</td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-        <!-- <td> 345574 </td> -->
-        <!-- <td><b>223</b> 12 4</td> -->
-        <!-- <td>Early</td> -->
-        <!-- </tr> -->
-        <!-- </tbody> -->
-        <!-- </table> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- <div class="panel panel-default"> -->
-        <!-- <div class="panel-heading"> -->
-        <!-- <h4 class="panel-title"> -->
-        <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> -->
-        <!-- <h4>Sydney Buses - 30/09/2015 </h4> -->
-        <!-- </a> -->
-        <!-- <i class="indicator glyphicon glyphicon-collapse-up  pull-right"></i> -->
-        <!-- </h4> -->
-        <!-- </div> -->
-        <!-- <div id="collapseTwo" class="panel-collapse collapse"> -->
-        <!-- <div class="panel-body"> -->
-        <!-- <table class="table table-hover"> -->
-        <!-- <thead> -->
-        <!-- <tr class="table-primary"> -->
-        <!-- <th scope="col">Bus ID</th> -->
-        <!-- <th scope="col">Route Variant</th> -->
-        <!-- <th scope="col">Status</th> -->
-        <!-- </tr> -->
-        <!-- </thead> -->
-        <!-- <tbody> -->
-        <!-- <tr> -->
-        <!-- <td>426212</td> -->
-        <!-- <td><b>892</b> 1 13</td> -->
-        <!-- <td>On Time</td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-        <!-- <td>426234</td> -->
-        <!-- <td><b>345</b> 6 7</td> -->
-        <!-- <td>Late</td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-        <!-- <td> 345574 </td> -->
-        <!-- <td><b>223</b> 12 4</td> -->
-        <!-- <td>Early</td> -->
-        <!-- </tr> -->
-        <!-- </tbody> -->
-        <!-- </table> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- <div class="panel panel-default"> -->
-        <!-- <div class="panel-heading"> -->
-        <!-- <h4 class="panel-title"> -->
-        <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> -->
-        <!-- <h4>Sydney Buses - 01/10/2015 </h4> -->
-        <!-- </a> -->
-        <!-- <i class="indicator glyphicon glyphicon-collapse-up pull-right"></i> -->
-        <!-- </h4> -->
-        <!-- </div> -->
-        <!-- <div id="collapseThree" class="panel-collapse collapse"> -->
-        <!-- <div class="panel-body"> -->
-        <!-- <table class="table table-hover"> -->
-        <!-- <thead> -->
-        <!-- <tr class="table-primary"> -->
-        <!-- <th scope="col">Bus ID</th> -->
-        <!-- <th scope="col">Route Variant</th> -->
-        <!-- <th scope="col">Status</th> -->
-        <!-- </tr> -->
-        <!-- </thead> -->
-        <!-- <tbody> -->
-        <!-- <tr> -->
-        <!-- <td>426212</td> -->
-        <!-- <td><b>892</b> 1 13</td> -->
-        <!-- <td>On Time</td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-        <!-- <td>426234</td> -->
-        <!-- <td><b>345</b> 6 7</td> -->
-        <!-- <td>Late</td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-        <!-- <td> 345574 </td> -->
-        <!-- <td><b>223</b> 12 4</td> -->
-        <!-- <td>Early</td> -->
-        <!-- </tr> -->
-        <!-- </tbody> -->
-        <!-- </table> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <div class="container">
-			<!-- Testing NgModel binding to the HTML template -->
-			<div class="row" *ngIf="busSchedules">
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <ul class="list-group launch">
-                    <li *ngFor="let busService of busSchedules.data; let i = index" class="list-group-item">
-                        <label for="bus name"><b> Bus Service{{i+1}} Name</b> </label> : {{busService && busService.organisation}}
-                    </li>
-                </ul>
-				</div>
-			</div>
-			<!-- Testing NgModel binding to the HTML template -->
-
+        <div class="container" *ngIf="busSchedules">
             <h1> Bus reports </h1>
-            <div class="panel-group" id="panel-quote-group">
+            <div *ngFor="let busService of busSchedules.data; let i = index" class="panel-group" (click) = "togglePanelGroup($event, i)" id="panel-quote-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#panel-quote-group" 
-                                class="accordion" href="#collapseTable1"> <strong class="js-bustitle">Sydney Buses - 15/07/2018</strong></a>
+                            <a data-toggle="collapse" (click)="togglePanel($event)" data-parent="#panel-quote-group" 
+                                class="accordion" href="#collapseTable{{i+1}}"> <strong class="js-bustitle">{{busService.organisation}} - {{busService.date}}</strong></a>
                             <span class="pull-right">
-                            <a data-toggle="collapse" data-parent="#panel-quote-group" href="#collapseTable1">
-                            <span class="toggle-icon glyphicon glyphicon-collapse-up"></span>
+                            <a data-toggle="collapse" (click)="togglePanel($event, i)" data-parent="#panel-quote-group" href="#collapseTable{{i+1}}">
+                            <span [ngClass]="{'glyphicon-collapse-down': chevronToggle[i] === 1, 'glyphicon-collapse-up': chevronToggle[i] === 0}"
+							class="toggle-icon glyphicon"></span>
                             </a>
                             </span>
                         </h4>
                     </div>
-                    <div id="collapseTable1" class="panel-collapse collapse">
+                    <div id="collapseTable{{i+1}}" class="panel-collapse collapse">
                         <div class="panel-body">
                             <table class="table table-hover">
                                 <thead>
@@ -188,20 +35,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>426212</td>
-                                        <td><b>892</b> 1 13</td>
-                                        <td>On Time</td>
-                                    </tr>
-                                    <tr>
-                                        <td>426234</td>
-                                        <td><b>345</b> 6 7</td>
-                                        <td>Late</td>
-                                    </tr>
-                                    <tr>
-                                        <td> 345574 </td>
-                                        <td><b>223</b> 12 4</td>
-                                        <td>Early</td>
+                                    <tr *ngFor="let busInfo of busService.busData; let i = index">
+                                        <td>{{busInfo.busId}}</td>
+                                        <td><b>{{getRouteId(busInfo.routeVariant)}}</b>{{getAllButRouteId(busInfo.routeVariant)}}</td>
+                                        <td [ngClass]="{'text-green': busInfo.deviationFromTimetable === 0, 
+										'text-blue': busInfo.deviationFromTimetable < 0,
+										'text-unknown': isUnknown(busInfo.deviationFromTimetable),
+										'text-red': busInfo.deviationFromTimetable > 0}">
+										{{busInfo.deviationFromTimetable ? getScheduleStatus(busInfo.deviationFromTimetable) : 'UNKNOWN'}}
+										</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -212,152 +54,18 @@
                     </div>
                 </div>
             </div>
-            <!-- item 2 starts -->
-            <div class="panel-group" id="panel-quote-group">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#panel-quote-group" 
-                                class="accordion" href="#collapseTable2"> <strong>Sydney Buses - 28/09/2015</strong></a>
-                            <span class="pull-right">
-                            <a data-toggle="collapse" data-parent="#panel-quote-group" href="#collapseTable2">
-                            <span class="toggle-icon glyphicon glyphicon-collapse-up"></span>
-                            </a>
-                            </span>
-                        </h4>
-                    </div>
-                    <div id="collapseTable2" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr class="table-primary">
-                                        <th scope="col">Bus ID</th>
-                                        <th scope="col">Route Variant</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>426212</td>
-                                        <td><b>892</b> 1 13</td>
-                                        <td>On Time</td>
-                                    </tr>
-                                    <tr>
-                                        <td>426234</td>
-                                        <td><b>345</b> 6 7</td>
-                                        <td>Late</td>
-                                    </tr>
-                                    <tr>
-                                        <td> 345574 </td>
-                                        <td><b>223</b> 12 4</td>
-                                        <td>Early</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" cols="100" id="comment" placeholder="Enter Notes here"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- item 2 ends -->
-            <!-- item 3 starts -->
-            <div class="panel-group" id="panel-quote-group">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#panel-quote-group" 
-                                class="accordion" href="#collapseTable3"> <strong>Sydney Buses - 30/09/2015</strong></a>
-                            <span class="pull-right">
-                            <a data-toggle="collapse" data-parent="#panel-quote-group" href="#collapseTable3">
-                            <span class="toggle-icon glyphicon glyphicon-collapse-up"></span>
-                            </a>
-                            </span>
-                        </h4>
-                    </div>
-                    <div id="collapseTable3" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr class="table-primary">
-                                        <th scope="col">Bus ID</th>
-                                        <th scope="col">Route Variant</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>426212</td>
-                                        <td><b>892</b> 1 13</td>
-                                        <td>On Time</td>
-                                    </tr>
-                                    <tr>
-                                        <td>426234</td>
-                                        <td><b>345</b> 6 7</td>
-                                        <td>Late</td>
-                                    </tr>
-                                    <tr>
-                                        <td> 345574 </td>
-                                        <td><b>223</b> 12 4</td>
-                                        <td>Early</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" cols="100" id="comment" placeholder="Enter Notes here"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- item 3 ends -->
         </div>
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     </body>
     <script>
-        /*function toggleChevron(e) {
-           $(e.target)
-               .prev('.panel-heading')
-               .find("i.indicator")
-               .toggleClass('glyphicon-collapse-down glyphicon-collapse-up');
-        }
-        $('.panel-heading').on('hidden.bs.collapse', toggleChevron);
-        $('.panel-heading').on('shown.bs.collapse', toggleChevron);
-        
-        
-        
-        $('.glyphicon').on('click', function(e) {
-        	$(this).toggleClass('glyphicon-collapse-down glyphicon-collapse-up');
-        });*/
-        
-        
-        $(document).ready(function () {
-        		/*$('a[data-toggle="collapse"]').click(function () {
-        		
-        			$(this).find('span.toggle-icon').toggleClass('glyphicon-collapse-up glyphicon-collapse-down');
-        		});
-        		
-        		$('#link1').click(function () {
-        			$(this).siblings().find('span.toggle-icon').toggleClass('glyphicon-collapse-up glyphicon-collapse-down');
-        		})
-        		
-        		$('#icon1').click(function () {
-        			$(this).find('span.toggle-icon').toggleClass('glyphicon-collapse-up glyphicon-collapse-down');
-        		})*/
-        		
-        	})
-        	
-        	$('a[data-toggle="collapse"]').click(function () {
-        		$(this).parent().siblings().find('span.toggle-icon').toggleClass('glyphicon-collapse-up glyphicon-collapse-down');
-        		$(this).parent().find('span.toggle-icon').toggleClass('glyphicon-collapse-up glyphicon-collapse-down');
-        	});
-        	
-        	$('.panel-group').on('show.bs.collapse', function (event) {
-        		var parent = $(event.target).parents('.collapse.in');
-        		$('.collapse.in').not(parent).collapse('hide');
-        	});
-        	
-        	
+		$('a[data-toggle="collapse"]').click(function () {
+			$(this).parent().siblings().find('span.toggle-icon').toggleClass('glyphicon-collapse-up glyphicon-collapse-down');
+			$(this).parent().find('span.toggle-icon').toggleClass('glyphicon-collapse-up glyphicon-collapse-down');
+		});
+		
+		$('.panel-group').on('show.bs.collapse', function (event) {
+			var parent = $(event.target).parents('.collapse.in');
+			$('.collapse.in').not(parent).collapse('hide');
+		});
     </script>

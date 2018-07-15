@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+a[data-toggle="collapse"] {
+	text-decoration:none;
+}
+
+.form-group {
+	padding:10px;
+}
+.table-primary {
+	background: #bee5eb;
+}
+
+.panel-default>div.panel-heading {
+	background: white;
+}
+
+.text-blue {
+	color: blue;
+}
+
+.text-red {
+	color:red;
+}
+
+.text-green {
+	color:green;
+}
+
+.text-unknown {
+	color:#D42662;
+}

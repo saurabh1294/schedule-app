@@ -30,7 +30,7 @@ export class BusService {
 		httpErrorHandler: HttpErrorHandler) {
 		this.handleError = httpErrorHandler.createHandleError('BusService');
 	}
-
+	
 	/** GET buses info from the server */
 	getBusSchedules(): Observable < BusInfo > {
 		return this.http.get < BusInfo > (`${this.baseUrl}/api/getBusSchedules`)
