@@ -57,7 +57,7 @@ If running on Linux
 * The above commands/tasks can be automated and a single command can be used via Grunt or Gulp.
 * I haven't used Grunt in this project. Another simple project which uses Grunt and it's corresponding Gruntfile can be found
 at:- https://github.com/saurabh1294/angular2Demo/blob/master/Gruntfile.js
-* Since the whole markup of this application is controlled by ngIf, it's difficult to test every piece of this application as is.
+* ## Since the whole markup of this application is controlled by ngIf, it's difficult to test every piece of this application as is.
 * To test this application as a whole, the entire markup of the application is to be prefilled via static json response. I haven't
   written all test cases covering this application owing to time constraints because the whole application structure will have to
   be tweaked just for testing purpose. However, it's easy to test the application through various tests like UI element/s matching 
