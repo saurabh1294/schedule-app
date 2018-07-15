@@ -29,3 +29,8 @@ a[data-toggle="collapse"] {
 .text-unknown {
 	color:#D42662;
 }
+
+textarea#comment {
+	font-weight: bold;
+	color: red;
+}
