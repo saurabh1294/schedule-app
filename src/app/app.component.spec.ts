@@ -1,98 +1,132 @@
 import {
-	TestBed,
-	async,
-	inject
+    TestBed,
+    async,
+    fakeAsync,
+    inject
 } from '@angular/core/testing';
 import {
-	AppComponent
+    AppComponent
 } from './app.component';
 import {
-	HttpClient,
-	HttpClientModule,
-	HttpHeaders
+    HttpClient,
+    HttpClientModule,
+    HttpHeaders
 } from '@angular/common/http';
 import {
-	BusService
+    BusService
 } from "./app.component.service";
 import {
-	HttpErrorHandler,
-	HandleError
+    HttpErrorHandler,
+    HandleError
 } from './app.component.handleError.service';
 import {
-	HttpClientTestingModule,
-	HttpTestingController
+    HttpClientTestingModule,
+    HttpTestingController
 } from '@angular/common/http/testing';
 
+
 describe('AppComponent', () => {
-	beforeEach(async (() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				AppComponent
-			],
-			providers: [
-				BusService,
-				HttpErrorHandler
-			],
-			imports: [
-				// no more boilerplate code w/ custom providers needed :-)
-				HttpClientModule,
-				HttpClientTestingModule
-			]
-		}).compileComponents();
-	}));
-
-	// test spec for create angular APP
-	it('should create the app', async (() => {
-		const fixture = TestBed.createComponent(AppComponent);
-		const app = fixture.debugElement.componentInstance;
-		expect(app).toBeTruthy();
-	}));
-
-	// test spec for testing the app root
-	it(`should have as title 'app'`, async (() => {
-		const fixture = TestBed.createComponent(AppComponent);
-		const app = fixture.debugElement.componentInstance;
-		expect(app.title).toEqual('app');
-	}));
-
-	// test spec for testing the app h1 tag header title
-	it('should render title in a h1 tag', async (() => {
-		const fixture = TestBed.createComponent(AppComponent);
-		fixture.detectChanges();
-		const compiled = fixture.debugElement.nativeElement;
-		expect(compiled.querySelector('h1').textContent).toContain('Bus reports');
-	}));
-
-	it(`should issue a request`,
-		// 1. declare as async test since the HttpClient works with Observables
-		async (
-			// 2. inject HttpClient and HttpTestingController into the test
-			inject([HttpClient, HttpTestingController], (http: HttpClient, backend: HttpTestingController) => {
-				// 3. send a simple request
-				http.get('http://localhost:4201/api/getBusSchedules').subscribe((data) => {
-					//expect(next).toEqual({ baz: '123' });
-					console.log(data, "API request");
-				});
+    beforeEach(async (() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                AppComponent
+            ],
+            providers: [
+                BusService,
+                HttpErrorHandler
+            ],
+            imports: [
+                // no more boilerplate code w/ custom providers needed :-)
+                HttpClientModule,
+                HttpClientTestingModule
+            ]
+        }).compileComponents();
+    }));
 
 
-				// 4. HttpTestingController supersedes `MockBackend` from the "old" Http package
-				// here two, it's significantly less boilerplate code needed to verify an expected request
-				backend.expectOne({
-					url: 'http://localhost:4201/api/getBusSchedules',
-					method: 'GET'
-				});
 
-			})
-		)
-	);
+    // test spec for create angular APP
+    it('should create the app', async (() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        const app = fixture.debugElement.componentInstance;
+        expect(app).toBeTruthy();
+    }));
 
-	it(`should send an expected get bus data request`, async (inject([BusService, HttpTestingController],
-		(service: BusService, backend: HttpTestingController) => {
-			service.getBusSchedules().subscribe((data) => {
-				//expect(next).toEqual({ baz: '123' });
-				console.log(data, "attempt to test API");
-				expect(data[0].organisation).toBe('Sydney buses abcd');
-			});
+    // test spec for testing the app root
+    it(`should have as title 'app'`, async (() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        const app = fixture.debugElement.componentInstance;
+        expect(app.title).toEqual('app');
+    }));
 
-		})));
+    // test spec for testing the app h1 tag header title
+    it('should render title in a h1 tag', async (() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('h1').textContent).toContain('Bus reports');
+    }));
+
+    it('test API response and UI', async (() => {
+
+        const fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+
+        let response = {
+            "data": [{
+                    "organisation": "Sydney Buses",
+                    "date": "25/09/2015",
+                    "busData": [{
+                            "busId": "42612",
+                            "routeVariant": "891 2 1",
+                            "deviationFromTimetable": 77
+                        },
+                        {
+                            "busId": "29016",
+                            "routeVariant": "400 1 1",
+                            "deviationFromTimetable": 340
+                        },
+                        {
+                            "busId": "90467",
+                            "routeVariant": "393 1 1",
+                            "deviationFromTimetable": 220
+                        },
+                        {
+                            "busId": "88836",
+                            "routeVariant": "M20 1 0",
+                            "deviationFromTimetable": -287
+                        },
+                        {
+                            "busId": "79367",
+                            "routeVariant": "L21 2 1",
+                            "deviationFromTimetable": 347
+                        }
+                    ]
+                },
+                {
+                    "organisation": "Westbus",
+                    "date": "25/09/2015",
+                    "busData": [{
+                            "busId": "94811",
+                            "routeVariant": "664 2 1",
+                            "deviationFromTimetable": 164
+                        },
+                        {
+                            "busId": "62788",
+                            "routeVariant": "UNKNOWN",
+                            "deviationFromTimetable": null
+                        },
+                        {
+                            "busId": "14221",
+                            "routeVariant": "834 1 1",
+                            "deviationFromTimetable": 423
+                        }
+                    ]
+                }
+            ]
+        }
+
+        expect(compiled.querySelector('.js-bustitle').textContent).toContain('Sydney Buses - 25/09/2015');
+    }));
 });

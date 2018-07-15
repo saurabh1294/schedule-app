@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
 
 
 	constructor(private busServices: BusService) {
-		//this.busSchedules = null;
+		this.busSchedules = null;
 	}
 
 
