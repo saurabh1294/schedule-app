@@ -1,5 +1,6 @@
 a[data-toggle="collapse"] {
 	text-decoration:none;
+	cursor:pointer;
 }
 
 .form-group {

@@ -42,3 +42,12 @@ Open another tab and run client using command:- ng serve --proxy-config proxy.co
 
 If running on Linux 
 * combine the above 2 commands like :- nodemon server/server.js --watch server& && ng serve --proxy-config proxy.config.json
+
+
+
+Assumptions of this application:
+
+* If the json response attribute 'deviationFromTimetable' < 0, the corresponding bus is late
+* If the json response attribute 'deviationFromTimetable' > 0, the corresponding bus is early
+* If the json response attribute 'deviationFromTimetable' = 0, the corresponding bus is on time
+* If the json response attribute 'deviationFromTimetable' = null, the corresponding bus timing is shown as UNKNOWN in the table

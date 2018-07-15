@@ -33,6 +33,15 @@ export class AppComponent implements OnInit {
 		return r;
 	}
 	
+	private resetToggle(index) {
+		let carr = this.chevronToggle;
+		for (let i = 0; i < carr.length; i++) {
+			if(i !== index) {
+				carr[i] = 0;
+			}
+		}
+	}
+	
 	public getScheduleStatus(timeDiff: number) {
 		if (timeDiff < 0) {
 			return 'Late';
@@ -48,17 +57,10 @@ export class AppComponent implements OnInit {
 	}
 	
 	public togglePanel(event, index) {
-		console.log("togglePanel ", event.target);
 		this.chevronToggle[index] = this.chevronToggle[index] ^ 1;
-		return true;
+		this.resetToggle(index);
 	}
 	
-	public togglePanelGroup(event, index) {
-		console.log("togglePanelGroup ", event.target);
-		this.chevronToggle[index] = this.chevronToggle[index] ^ 1;
-		return true;
-	}
-
 	ngOnInit() {
 		this.busServices.getBusSchedules().subscribe(p => this.busSchedules = p);
 	}

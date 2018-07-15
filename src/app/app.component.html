@@ -10,21 +10,21 @@
     <body>
         <div class="container" *ngIf="busSchedules">
             <h1> Bus reports </h1>
-            <div *ngFor="let busService of busSchedules.data; let i = index" class="panel-group" (click) = "togglePanelGroup($event, i)" id="panel-quote-group">
+            <div *ngFor="let busService of busSchedules.data; let i = index" class="panel-group" id="panel-quote-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" (click)="togglePanel($event)" data-parent="#panel-quote-group" 
-                                class="accordion" href="#collapseTable{{i+1}}"> <strong class="js-bustitle">{{busService.organisation}} - {{busService.date}}</strong></a>
+                            <a data-toggle="collapse" (click)="togglePanel($event, i)" data-parent="#panel-quote-group" 
+                                class="accordion"> <strong class="js-bustitle">{{busService.organisation}} - {{busService.date}}</strong></a>
                             <span class="pull-right">
-                            <a data-toggle="collapse" (click)="togglePanel($event, i)" data-parent="#panel-quote-group" href="#collapseTable{{i+1}}">
+                            <a data-toggle="collapse" (click)="togglePanel($event, i)" data-parent="#panel-quote-group">
                             <span [ngClass]="{'glyphicon-collapse-down': chevronToggle[i] === 1, 'glyphicon-collapse-up': chevronToggle[i] === 0}"
 							class="toggle-icon glyphicon"></span>
                             </a>
                             </span>
                         </h4>
                     </div>
-                    <div id="collapseTable{{i+1}}" class="panel-collapse collapse">
+                    <div id="collapseTable{{i+1}}" class="panel-collapse" [ngClass]="{'in': chevronToggle[i] === 1, 'collapse': chevronToggle[i] === 0}">
                         <div class="panel-body">
                             <table class="table table-hover">
                                 <thead>
