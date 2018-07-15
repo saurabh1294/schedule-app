@@ -62,6 +62,6 @@ at:- https://github.com/saurabh1294/angular2Demo/blob/master/Gruntfile.js
   to reasons mentioned in point 3 above. I haven't written all test cases covering this application owing to time constraints because 
   the whole application structure will have to be tweaked just for testing purpose. However, it's easy to test the application through
   various tests like UI element/s matching with static JSON response data ,simulating mouse clicks by using triggerEventHandler(), spyOn() etc.
-  If you are keen to check some sample test scripts. Please refer this link to one of my old repos 
+  If you are keen to check some sample test scripts, please refer this link to one of my old repos 
   here:- https://github.com/saurabh1294/weather-simulation/blob/master/tests/tests-spec.js. 
   The demo link to this application can be found on my blog:- http://golibrary.co/weather-simulation/
