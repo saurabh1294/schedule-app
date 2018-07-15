@@ -59,5 +59,9 @@ If running on Linux
 at:- https://github.com/saurabh1294/angular2Demo/blob/master/Gruntfile.js
 * Since the whole markup of this application is controlled by ngIf, it's difficult to test every piece of this application as is.
 * To test this application as a whole, the entire markup of the application is to be prefilled via static json response. I haven't
-  written all test cases covering this application owing to time constraints. But it's easy to test UI elements by matching them with
-  JSON response data and simulating mouse clicks by using triggerEventHandler(), spyOn() etc.
+  written all test cases covering this application owing to time constraints because the whole application structure will have to
+  be tweaked just for testing purpose. However, it's easy to test the application through various tests like UI element/s matching 
+  with static JSON response data ,simulating mouse clicks by using triggerEventHandler(), spyOn() etc.
+  If you are keen to check some sample test scripts. Please refer this link to one of my old repos 
+  here:- https://github.com/saurabh1294/weather-simulation/blob/master/tests/tests-spec.js. The demo link to this application can
+  be found on my blog:- http://golibrary.co/weather-simulation/
