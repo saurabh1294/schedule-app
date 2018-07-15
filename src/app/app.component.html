@@ -151,6 +151,18 @@
         <!-- </div> -->
         <!-- </div> -->
         <div class="container">
+			<!-- Testing NgModel binding to the HTML template -->
+			<div class="row" *ngIf="busSchedules">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <ul class="list-group launch">
+                    <li *ngFor="let busService of busSchedules.data; let i = index" class="list-group-item">
+                        <label for="bus name"><b> Bus Service{{i+1}} Name</b> </label> : {{busService && busService.organisation}}
+                    </li>
+                </ul>
+				</div>
+			</div>
+			<!-- Testing NgModel binding to the HTML template -->
+
             <h1> Bus reports </h1>
             <div class="panel-group" id="panel-quote-group">
                 <div class="panel panel-default">

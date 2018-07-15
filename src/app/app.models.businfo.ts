@@ -1,7 +1,8 @@
 export class BusInfo {
    constructor(
-      public organization: string,
+	  public data: object[]
+      /*public organisation: string,
       public date: string,
-      public busData: object[]
+      public busData: object[]*/
    ) {}
 }
