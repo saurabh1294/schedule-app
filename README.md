@@ -33,7 +33,11 @@ Pull this repo go inside the project root and run npm install
 Install below packages globally using the below commands
 
 npm install -g @angular/cli
+
 npm install -g nodemon
+
+cd schedule-app and then run npm install
+
 
 Open a tab and start server using the command:- nodemon server/server.js --watch server.  This will start server on port 4201
 
