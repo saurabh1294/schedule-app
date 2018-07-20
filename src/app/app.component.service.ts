@@ -32,7 +32,7 @@ export class BusService {
 	}
 	
 	/** GET buses info from the server */
-	getBusSchedules(): Observable < BusInfo > {
+	getBusSchedules(): Observable < BusInfo | any > {
 		return this.http.get < BusInfo > (`${this.baseUrl}/api/getBusSchedules`)
 			.pipe(
 				catchError(this.handleError('getBusSchedules', null))

@@ -42,7 +42,7 @@
 										'text-blue': busInfo.deviationFromTimetable < 0,
 										'text-unknown': isUnknown(busInfo.deviationFromTimetable),
 										'text-red': busInfo.deviationFromTimetable > 0}">
-										{{busInfo.deviationFromTimetable ? getScheduleStatus(busInfo.deviationFromTimetable) : 'UNKNOWN'}}
+										{{ (busInfo.deviationFromTimetable === 0 || busInfo.deviationFromTimetable) ? getScheduleStatus(busInfo.deviationFromTimetable) : 'UNKNOWN'}}
 										</td>
                                     </tr>
                                 </tbody>

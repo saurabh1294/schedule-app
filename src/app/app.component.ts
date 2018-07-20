@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
 	}
 	
 	/* checks if bus time deviation status is unknown */
-	public isUnknown(timeDiff: object) {
+	public isUnknown(timeDiff: number) {
 		return timeDiff === null;
 	}
 	
